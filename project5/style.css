@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#main_image{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#main_image .image{
+    margin: 20px;
+    width: 20%;
+    height: 200px;
+    /* border: 1px solid red; */
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+}
+#main_image .image img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    object-position: 0% 20%;
+    transition: all 0.5s ease-in;
+
+}
+#main_image .image .content{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: none;
+}
+#main_image .image .content .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 40px;
+}
+#main_image .image .content .icon .fa-brands,#main_image .image .content h4{
+
+    color: rgb(33, 98, 49);
+}
+#main_image .image:nth-of-type(2) img{
+    object-position: 0% 10%;
+}
+#main_image .image:hover img{
+    transform: scale(3.5) translateY(20px) translateX(30px);
+}
+#main_image .image:nth-of-type(2):hover img{
+    transform: scale(3.5) translateY(50px) translateX(30px);
+}
+#main_image .image:nth-of-type(3):hover img{
+    transform: scale(3.5) translateY(40px) translateX(20px);
+}
+#main_image .image:hover .content{
+    display: block;
+    animation: fade ease 1.5s;
+}
+
+@keyframes fade {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+} 
