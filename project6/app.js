@@ -88,8 +88,21 @@ function analogClock() {
   hour = d.getHours();
   hours.style.transform = `rotate(${hour * 30 + min / 2}deg)`;
 
-  hourInDate.innerHTML = `${hour}`;
-  minInDate.innerHTML = `${min}`;
+  //Hour 
+  if(hour >= 10){
+    hourInDate.innerHTML = `${hour}`;
+  }
+  else{
+    hourInDate.innerHTML = `0${hour}`;
+  }
+  //Min
+  if(min >= 10){
+    minInDate.innerHTML = `${min}`;
+  }
+  else{
+    minInDate.innerHTML = `0${min}`;
+  }
+  //Second
   hour >= 12 ? (AM_PM.innerHTML = "PM") : (AM_PM.innerHTML = "AM");
 
   date.innerHTML = `${d.getDate()} ${month} ${d.getFullYear()} (${day})`;
